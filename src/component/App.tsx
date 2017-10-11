@@ -37,9 +37,9 @@
         /***************************************************************************************************************
         *   Being invoked every time this component renders.
         *
-        *   @return {JSXTransformer} The rendered JSX.
+        *   @return JSX.Element The rendered JSX.
         ***************************************************************************************************************/
-        render()
+        render() : JSX.Element
         {
             console.log( "App.render() being invoked" );
 
