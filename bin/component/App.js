@@ -40,12 +40,9 @@ var App = /** @class */ (function (_super) {
     *   @return JSX.Element The rendered JSX.
     ***************************************************************************************************************/
     App.prototype.render = function () {
-        var _this = this;
         console.log("App.render() being invoked");
         return React.createElement("div", null,
-            React.createElement("h1", { id: "appTitle" }, this.props.title),
-            React.createElement(TaskInput, { onTaskCreate: function (newTask) { return _this.createTask(newTask); } }),
-            React.createElement(TaskList, { taskList: this.state.taskList, onTaskDelete: function (taskIndex) { return _this.deleteTask(taskIndex); }, onTaskMoveUp: function (taskIndex) { return _this.moveTaskUp(taskIndex); }, onTaskMoveDown: function (taskIndex) { return _this.moveTaskDown(taskIndex); } }));
+            React.createElement("h1", { id: "appTitle" }, this.props.title));
     };
     /***************************************************************************************************************
     *   Creates a new task in the TaskList component.

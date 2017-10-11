@@ -4,6 +4,9 @@ function __export(m) {
 }
 exports.__esModule = true;
 __export(require("./component/App"));
-__export(require("./component/TaskInput"));
-__export(require("./component/TaskList"));
+/*
+    export * from './component/TaskInput';
+
+    export * from './component/TaskList';
+*/
 //# sourceMappingURL=tl.js.map

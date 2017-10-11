@@ -4,32 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --watch",
+    "start": "npm run build:webpack",
+    "build:webpack": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/christopherstock/ReactAdvanced.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/christopherstock/ReactAdvanced/issues"
-  },
-  "homepage": "https://github.com/christopherstock/ReactAdvanced#readme",
   "devDependencies": {
-    "@types/react": "^16.0.5",
-    "@types/react-dom": "^15.5.4",
-    "@types/typescript": "^2.0.0",
-    "@types/webpack": "^3.0.13",
-    "awesome-typescript-loader": "^3.2.3",
-    "source-map-loader": "^0.2.1",
-    "typescript": "^2.5.3",
-    "webpack": "^3.6.0"
+    "@types/react": "16.0.5",
+    "@types/react-dom": "15.5.4",
+    "@types/typescript": "2.0.0",
+    "@types/webpack": "3.0.10",
+    "awesome-typescript-loader": "3.2.3",
+    "source-map-loader": "0.2.1",
+    "typescript": "2.5.2",
+    "webpack": "3.5.5"
   },
   "dependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^15.6.1"
+    "react": "15.6.1",
+    "react-dom": "15.6.1"
   }
 }

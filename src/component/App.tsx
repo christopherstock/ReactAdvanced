@@ -39,7 +39,7 @@
         *
         *   @return JSX.Element The rendered JSX.
         ***************************************************************************************************************/
-        render() : JSX.Element
+        render()
         {
             console.log( "App.render() being invoked" );
 
@@ -48,18 +48,10 @@
                 { /* title */ }
                 <h1 id="appTitle">{ this.props.title }</h1>
 
-                { /* task input form */ }
-                <TaskInput
-                    onTaskCreate={ ( newTask ) => this.createTask( newTask ) }
-                />
 
-                { /* task list */ }
-                <TaskList
-                    taskList={ this.state.taskList }
-                    onTaskDelete={   ( taskIndex ) => this.deleteTask(   taskIndex ) }
-                    onTaskMoveUp={   ( taskIndex ) => this.moveTaskUp(   taskIndex ) }
-                    onTaskMoveDown={ ( taskIndex ) => this.moveTaskDown( taskIndex ) }
-                />
+
+
+
 
             </div>;
         }
@@ -69,7 +61,7 @@
         *
         *   @param {string} taskName The name of the task to create.
         ***************************************************************************************************************/
-        createTask( taskName )
+        createTask( taskName:string )
         {
             console.log( "App.createTask( " + taskName + " ) being invoked" );
 
@@ -90,7 +82,7 @@
         *
         *   @param {number} taskIndex The index of the task to delete.
         ***************************************************************************************************************/
-        deleteTask( taskIndex )
+        deleteTask( taskIndex:number )
         {
             console.log( "App.deleteTask( " + taskIndex + " ) being invoked" );
 
@@ -111,7 +103,7 @@
         *
         *   @param {number} taskIndex The index of the task to move up.
         ***************************************************************************************************************/
-        moveTaskUp( taskIndex )
+        moveTaskUp( taskIndex:number )
         {
             console.log( "App.moveTaskUp( " + taskIndex + " ) being invoked" );
 
@@ -140,7 +132,7 @@
         *
         *   @param {number} taskIndex The index of the task to move down.
         ***************************************************************************************************************/
-        moveTaskDown( taskIndex )
+        moveTaskDown( taskIndex:number )
         {
             console.log( "App.moveTaskDown( " + taskIndex + " ) being invoked" );
 
@@ -187,7 +179,7 @@
         *   @param {Object} nextState   The state to set on updating.
         *   @param {Object} nextContext The context to set on updating.
         ***************************************************************************************************************/
-        componentWillUpdate( nextProps, nextState, nextContext )
+        componentWillUpdate( nextProps:tl.AppProps, nextState:tl.AppState, nextContext:tl.AppState )
         {
             console.log( "App.componentWillUpdate() being invoked" );
         }
@@ -198,7 +190,7 @@
         *   @param {Object} nextProps   The props to set on updating.
         *   @param {Object} nextContext The context to set on updating.
         ***************************************************************************************************************/
-        componentWillReceiveProps( nextProps, nextContext )
+        componentWillReceiveProps( nextProps:tl.AppProps, nextContext:any )
         {
             console.log( "App.componentWillReceiveProps() being invoked" );
         }
