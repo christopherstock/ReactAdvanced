@@ -26,7 +26,7 @@ var TaskList = /** @class */ (function (_super) {
     /***************************************************************************************************************
     *   Being invoked every time this component renders.
     *
-    *   @return {JSXTransformer} The rendered JSX.
+    *   @return JSX.Element The rendered JSX.
     ***************************************************************************************************************/
     TaskList.prototype.render = function () {
         console.log("TaskList.render() being invoked");
@@ -37,7 +37,7 @@ var TaskList = /** @class */ (function (_super) {
     /***************************************************************************************************************
     *   Creates and returns all items of the task list.
     *
-    *   @return {JSXTransformer[]} The rendered JSX elements.
+    *   @return JSX.Element[] The rendered JSX elements.
     ***************************************************************************************************************/
     TaskList.prototype.createTaskListItems = function () {
         var _this = this;

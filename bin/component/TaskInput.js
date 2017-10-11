@@ -36,13 +36,13 @@ var TaskInput = /** @class */ (function (_super) {
     /***************************************************************************************************************
     *   Being invoked every time this component renders.
     *
-    *   @return {JSXTransformer} The rendered JSX.
+    *   @return JSX.Element The rendered JSX.
     ***************************************************************************************************************/
     TaskInput.prototype.render = function () {
         var _this = this;
         console.log("TaskInput.render() being invoked");
         return React.createElement("form", { onSubmit: function (event) { _this.onFormSubmit(event); } },
-            React.createElement("input", { id: "newTask", type: "text", maxLength: "50", className: this.state.inputError ? "input error" : "input", value: this.state.inputText, onChange: function (event) { _this.onInputChange(event); } }),
+            React.createElement("input", { id: "newTask", type: "text", maxLength: 50, className: this.state.inputError ? "input error" : "input", value: this.state.inputText, onChange: function (event) { _this.onInputChange(event); } }),
             React.createElement("br", null),
             React.createElement("input", { id: "submitButton", type: "submit", value: "Create Task", className: "button" }));
     };

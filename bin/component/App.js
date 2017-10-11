@@ -11,6 +11,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 exports.__esModule = true;
 var React = require("react");
+var tl = require("../tl");
 /*******************************************************************************************************************
 *   The entire application component.
 *   This is an example for a stateful component.
@@ -40,9 +41,12 @@ var App = /** @class */ (function (_super) {
     *   @return JSX.Element The rendered JSX.
     ***************************************************************************************************************/
     App.prototype.render = function () {
+        var _this = this;
         console.log("App.render() being invoked");
         return React.createElement("div", null,
-            React.createElement("h1", { id: "appTitle" }, this.props.title));
+            React.createElement("h1", { id: "appTitle" }, this.props.title),
+            React.createElement(tl.TaskInput, { onTaskCreate: function (newTask) { return _this.createTask(newTask); } }),
+            React.createElement(tl.TaskList, { taskList: this.state.taskList, onTaskDelete: function (taskIndex) { return _this.deleteTask(taskIndex); }, onTaskMoveUp: function (taskIndex) { return _this.moveTaskUp(taskIndex); }, onTaskMoveDown: function (taskIndex) { return _this.moveTaskDown(taskIndex); } }));
     };
     /***************************************************************************************************************
     *   Creates a new task in the TaskList component.

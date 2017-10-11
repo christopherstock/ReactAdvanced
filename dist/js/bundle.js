@@ -22385,11 +22385,8 @@ function __export(m) {
 }
 exports.__esModule = true;
 __export(__webpack_require__(185));
-/*
-    export * from './component/TaskInput';
-
-    export * from './component/TaskList';
-*/
+__export(__webpack_require__(186));
+__export(__webpack_require__(187));
 
 
 /***/ }),
@@ -22410,6 +22407,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 exports.__esModule = true;
 var React = __webpack_require__(49);
+var tl = __webpack_require__(184);
 /*******************************************************************************************************************
 *   The entire application component.
 *   This is an example for a stateful component.
@@ -22439,9 +22437,12 @@ var App = /** @class */ (function (_super) {
     *   @return JSX.Element The rendered JSX.
     ***************************************************************************************************************/
     App.prototype.render = function () {
+        var _this = this;
         console.log("App.render() being invoked");
         return React.createElement("div", null,
-            React.createElement("h1", { id: "appTitle" }, this.props.title));
+            React.createElement("h1", { id: "appTitle" }, this.props.title),
+            React.createElement(tl.TaskInput, { onTaskCreate: function (newTask) { return _this.createTask(newTask); } }),
+            React.createElement(tl.TaskList, { taskList: this.state.taskList, onTaskDelete: function (taskIndex) { return _this.deleteTask(taskIndex); }, onTaskMoveUp: function (taskIndex) { return _this.moveTaskUp(taskIndex); }, onTaskMoveDown: function (taskIndex) { return _this.moveTaskDown(taskIndex); } }));
     };
     /***************************************************************************************************************
     *   Creates a new task in the TaskList component.
@@ -22559,6 +22560,177 @@ var App = /** @class */ (function (_super) {
     return App;
 }(React.Component));
 exports.App = App;
+
+
+/***/ }),
+/* 186 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+exports.__esModule = true;
+var React = __webpack_require__(49);
+/*******************************************************************************************************************
+*   Represents the input component that lets the user create new tasks.
+*   This is an example for a stateful and controlled component.
+*
+*   @author  Christopher Stock
+*   @version 1.0
+*******************************************************************************************************************/
+var TaskInput = /** @class */ (function (_super) {
+    __extends(TaskInput, _super);
+    /***************************************************************************************************************
+    *   Initializes this component by setting the initial state.
+    *
+    *   @param {Object} props The initial properties being passed in the component tag.
+    ***************************************************************************************************************/
+    function TaskInput(props) {
+        var _this = _super.call(this, props) || this;
+        _this.state = {
+            inputError: false,
+            inputText: ""
+        };
+        return _this;
+    }
+    /***************************************************************************************************************
+    *   Being invoked every time this component renders.
+    *
+    *   @return JSX.Element The rendered JSX.
+    ***************************************************************************************************************/
+    TaskInput.prototype.render = function () {
+        var _this = this;
+        console.log("TaskInput.render() being invoked");
+        return React.createElement("form", { onSubmit: function (event) { _this.onFormSubmit(event); } },
+            React.createElement("input", { id: "newTask", type: "text", maxLength: 50, className: this.state.inputError ? "input error" : "input", value: this.state.inputText, onChange: function (event) { _this.onInputChange(event); } }),
+            React.createElement("br", null),
+            React.createElement("input", { id: "submitButton", type: "submit", value: "Create Task", className: "button" }));
+    };
+    /***************************************************************************************************************
+    *   Being invoked when the input field value changes.
+    *
+    *   @param {Event} event The event when the input field value changes.
+    ***************************************************************************************************************/
+    TaskInput.prototype.onInputChange = function (event) {
+        console.log("TaskInput.onInputChange being invoked");
+        this.setState({
+            inputError: false,
+            inputText: event.target.value
+        });
+    };
+    /***************************************************************************************************************
+    *   Being invoked when the form is submitted.
+    *
+    *   @param {Event} event The form submission event.
+    ***************************************************************************************************************/
+    TaskInput.prototype.onFormSubmit = function (event) {
+        console.log("TaskInput.onFormSubmit being invoked");
+        // suppress page reload
+        event.preventDefault();
+        // trim entered text
+        var enteredText = this.state.inputText.trim();
+        // check entered text
+        console.log("Trimmed text in the box is [" + enteredText + "]");
+        if (enteredText.length === 0) {
+            console.log("Empty text input detected.");
+            // set error state
+            this.setState({
+                inputError: true,
+                inputText: ""
+            });
+        }
+        else {
+            // clear error state
+            this.setState({
+                inputError: false,
+                inputText: ""
+            });
+            // invoke parent listener
+            this.props.onTaskCreate(enteredText);
+        }
+    };
+    ;
+    return TaskInput;
+}(React.Component));
+exports.TaskInput = TaskInput;
+
+
+/***/ }),
+/* 187 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+exports.__esModule = true;
+var React = __webpack_require__(49);
+/*******************************************************************************************************************
+*   Represents the TaskList component.
+*   This is an example for a stateless component.
+*
+*   @author  Christopher Stock
+*   @version 1.0
+*******************************************************************************************************************/
+var TaskList = /** @class */ (function (_super) {
+    __extends(TaskList, _super);
+    function TaskList() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /***************************************************************************************************************
+    *   Being invoked every time this component renders.
+    *
+    *   @return JSX.Element The rendered JSX.
+    ***************************************************************************************************************/
+    TaskList.prototype.render = function () {
+        console.log("TaskList.render() being invoked");
+        // animate main container height later
+        document.getElementById("mainContainer").style.height = (150 + (this.props.taskList.length * 55)) + "px";
+        return React.createElement("ul", { id: "taskList" }, this.createTaskListItems());
+    };
+    /***************************************************************************************************************
+    *   Creates and returns all items of the task list.
+    *
+    *   @return JSX.Element[] The rendered JSX elements.
+    ***************************************************************************************************************/
+    TaskList.prototype.createTaskListItems = function () {
+        var _this = this;
+        var items = [];
+        var _loop_1 = function (index) {
+            items.push(React.createElement("li", { key: index },
+                React.createElement("div", null,
+                    this_1.props.taskList[index],
+                    React.createElement("button", { onClick: function () { _this.props.onTaskDelete(index); }, className: "button" }, "\u2716"),
+                    React.createElement("button", { onClick: function () { _this.props.onTaskMoveDown(index); }, disabled: index === this_1.props.taskList.length - 1, className: "button" }, "\u25BC"),
+                    React.createElement("button", { onClick: function () { _this.props.onTaskMoveUp(index); }, disabled: index === 0, className: "button" }, "\u25B2"))));
+        };
+        var this_1 = this;
+        // browse all task list items
+        for (var index = 0; index < this.props.taskList.length; ++index) {
+            _loop_1(index);
+        }
+        return items;
+    };
+    return TaskList;
+}(React.Component));
+exports.TaskList = TaskList;
 
 
 /***/ })

@@ -48,10 +48,18 @@
                 { /* title */ }
                 <h1 id="appTitle">{ this.props.title }</h1>
 
+                { /* task input form */ }
+                <tl.TaskInput
+                    onTaskCreate={ ( newTask:string ) => this.createTask( newTask ) }
+                />
 
-
-
-
+                { /* task list */ }
+                <tl.TaskList
+                    taskList={ this.state.taskList }
+                    onTaskDelete={   ( taskIndex:number ) => this.deleteTask(   taskIndex ) }
+                    onTaskMoveUp={   ( taskIndex:number ) => this.moveTaskUp(   taskIndex ) }
+                    onTaskMoveDown={ ( taskIndex:number ) => this.moveTaskDown( taskIndex ) }
+                />
 
             </div>;
         }
