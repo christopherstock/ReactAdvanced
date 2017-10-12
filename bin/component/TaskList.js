@@ -32,23 +32,22 @@ var TaskList = /** @class */ (function (_super) {
         console.log("TaskList.render() being invoked");
         // animate main container height later
         document.getElementById("mainContainer").style.height = (150 + (this.props.taskList.length * 55)) + "px";
-        return React.createElement("ul", { id: "taskList" }, this.createTaskListItems());
+        return React.createElement("ul", { id: "taskList" }, this.createItems());
     };
     /***************************************************************************************************************
-    *   Creates and returns all items of the task list.
+    *   Creates and returns all items for the task list.
     *
     *   @return JSX.Element[] The rendered JSX elements.
     ***************************************************************************************************************/
-    TaskList.prototype.createTaskListItems = function () {
+    TaskList.prototype.createItems = function () {
         var _this = this;
         var items = [];
         var _loop_1 = function (index) {
             items.push(React.createElement("li", { key: index },
-                React.createElement("div", null,
-                    this_1.props.taskList[index],
-                    React.createElement("button", { onClick: function () { _this.props.onTaskDelete(index); }, className: "button" }, "\u2716"),
-                    React.createElement("button", { onClick: function () { _this.props.onTaskMoveDown(index); }, disabled: index === this_1.props.taskList.length - 1, className: "button" }, "\u25BC"),
-                    React.createElement("button", { onClick: function () { _this.props.onTaskMoveUp(index); }, disabled: index === 0, className: "button" }, "\u25B2"))));
+                this_1.props.taskList[index],
+                React.createElement("button", { onClick: function () { _this.props.onTaskDelete(index); }, className: "button" }, "\u2716"),
+                React.createElement("button", { onClick: function () { _this.props.onTaskMoveDown(index); }, disabled: index === this_1.props.taskList.length - 1, className: "button" }, "\u25BC"),
+                React.createElement("button", { onClick: function () { _this.props.onTaskMoveUp(index); }, disabled: index === 0, className: "button" }, "\u25B2")));
         };
         var this_1 = this;
         // browse all task list items

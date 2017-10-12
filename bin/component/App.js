@@ -16,6 +16,7 @@ var tl = require("../tl");
 *   The entire application component.
 *   This is an example for a stateful component.
 *
+*   TODO correct all doc blocks!
 *   TODO styles https://medium.com/@aghh1504/4-four-ways-to-style-react-components-ac6f323da822
 *
 *   @author  Christopher Stock
@@ -131,7 +132,7 @@ var App = /** @class */ (function (_super) {
         console.log("App.componentDidMount() being invoked");
     };
     /***************************************************************************************************************
-    *   Being invoked before this component has been unmounted.
+    *   Being invoked before this component has been updated.
     *
     *   @param {Object} nextProps   The props to set on updating.
     *   @param {Object} nextState   The state to set on updating.
