@@ -1,6 +1,6 @@
 
     /*******************************************************************************************************************
-    *   All properties of the 'App' component.
+    *   The state for the 'App' component.
     *
     *   @author  Christopher Stock
     *   @version 1.0

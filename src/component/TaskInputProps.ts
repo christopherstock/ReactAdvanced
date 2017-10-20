@@ -1,6 +1,6 @@
 
     /*******************************************************************************************************************
-    *   All properties of the 'App' component.
+    *   All properties of the 'TaskInput' component.
     *
     *   @author  Christopher Stock
     *   @version 1.0

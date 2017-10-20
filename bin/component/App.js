@@ -16,9 +16,6 @@ var tl = require("../tl");
 *   The entire application component.
 *   This is an example for a stateful component.
 *
-*   TODO correct all doc blocks!
-*   TODO styles https://medium.com/@aghh1504/4-four-ways-to-style-react-components-ac6f323da822
-*
 *   @author  Christopher Stock
 *   @version 1.0
 *******************************************************************************************************************/
@@ -27,7 +24,7 @@ var App = /** @class */ (function (_super) {
     /***************************************************************************************************************
     *   Initializes this component by setting the initial state.
     *
-    *   @param {Object} props The initial properties being passed in the component tag.
+    *   @param props The initial properties being passed in the component tag.
     ***************************************************************************************************************/
     function App(props) {
         var _this = _super.call(this, props) || this;
@@ -39,7 +36,7 @@ var App = /** @class */ (function (_super) {
     /***************************************************************************************************************
     *   Being invoked every time this component renders.
     *
-    *   @return JSX.Element The rendered JSX.
+    *   @return The rendered JSX.
     ***************************************************************************************************************/
     App.prototype.render = function () {
         var _this = this;
@@ -52,7 +49,7 @@ var App = /** @class */ (function (_super) {
     /***************************************************************************************************************
     *   Creates a new task in the TaskList component.
     *
-    *   @param {string} taskName The name of the task to create.
+    *   @param taskName The name of the task to create.
     ***************************************************************************************************************/
     App.prototype.createTask = function (taskName) {
         console.log("App.createTask( " + taskName + " ) being invoked");
@@ -67,7 +64,7 @@ var App = /** @class */ (function (_super) {
     /***************************************************************************************************************
     *   Deletes the task with the specified index.
     *
-    *   @param {number} taskIndex The index of the task to delete.
+    *   @param taskIndex The index of the task to delete.
     ***************************************************************************************************************/
     App.prototype.deleteTask = function (taskIndex) {
         console.log("App.deleteTask( " + taskIndex + " ) being invoked");
@@ -82,7 +79,7 @@ var App = /** @class */ (function (_super) {
     /***************************************************************************************************************
     *   Moves the task with the specified index up.
     *
-    *   @param {number} taskIndex The index of the task to move up.
+    *   @param taskIndex The index of the task to move up.
     ***************************************************************************************************************/
     App.prototype.moveTaskUp = function (taskIndex) {
         console.log("App.moveTaskUp( " + taskIndex + " ) being invoked");
@@ -102,7 +99,7 @@ var App = /** @class */ (function (_super) {
     /***************************************************************************************************************
     *   Moves the task with the specified index down.
     *
-    *   @param {number} taskIndex The index of the task to move down.
+    *   @param taskIndex The index of the task to move down.
     ***************************************************************************************************************/
     App.prototype.moveTaskDown = function (taskIndex) {
         console.log("App.moveTaskDown( " + taskIndex + " ) being invoked");

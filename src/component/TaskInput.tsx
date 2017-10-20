@@ -14,7 +14,7 @@
         /***************************************************************************************************************
         *   Initializes this component by setting the initial state.
         *
-        *   @param {Object} props The initial properties being passed in the component tag.
+        *   @param props The initial properties being passed in the component tag.
         ***************************************************************************************************************/
         constructor( props:tl.TaskInputProps )
         {
@@ -29,7 +29,7 @@
         /***************************************************************************************************************
         *   Being invoked every time this component renders.
         *
-        *   @return JSX.Element The rendered JSX.
+        *   @return The rendered JSX.
         ***************************************************************************************************************/
         render() : JSX.Element
         {
@@ -63,9 +63,9 @@
         /***************************************************************************************************************
         *   Being invoked when the input field value changes.
         *
-        *   @param {Event} event The event when the input field value changes.
+        *   @param event The event when the input field value changes.
         ***************************************************************************************************************/
-        onInputChange( event:React.ChangeEvent<any> )
+        onInputChange( event:React.ChangeEvent<any> ) : void
         {
             console.log( "TaskInput.onInputChange being invoked" );
 
@@ -80,9 +80,9 @@
         /***************************************************************************************************************
         *   Being invoked when the form is submitted.
         *
-        *   @param {Event} event The form submission event.
+        *   @param event The form submission event.
         ***************************************************************************************************************/
-        onFormSubmit( event:React.FormEvent<any> )
+        onFormSubmit( event:React.FormEvent<any> ) : void
         {
             console.log( "TaskInput.onFormSubmit being invoked" );
 

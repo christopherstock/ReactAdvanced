@@ -37,7 +37,7 @@ var TaskList = /** @class */ (function (_super) {
     /***************************************************************************************************************
     *   Creates and returns all items for the task list.
     *
-    *   @return JSX.Element[] The rendered JSX elements.
+    *   @return An array with all rendered JSX elements.
     ***************************************************************************************************************/
     TaskList.prototype.createItems = function () {
         var _this = this;

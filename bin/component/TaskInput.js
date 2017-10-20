@@ -23,7 +23,7 @@ var TaskInput = /** @class */ (function (_super) {
     /***************************************************************************************************************
     *   Initializes this component by setting the initial state.
     *
-    *   @param {Object} props The initial properties being passed in the component tag.
+    *   @param props The initial properties being passed in the component tag.
     ***************************************************************************************************************/
     function TaskInput(props) {
         var _this = _super.call(this, props) || this;
@@ -36,7 +36,7 @@ var TaskInput = /** @class */ (function (_super) {
     /***************************************************************************************************************
     *   Being invoked every time this component renders.
     *
-    *   @return JSX.Element The rendered JSX.
+    *   @return The rendered JSX.
     ***************************************************************************************************************/
     TaskInput.prototype.render = function () {
         var _this = this;
@@ -49,7 +49,7 @@ var TaskInput = /** @class */ (function (_super) {
     /***************************************************************************************************************
     *   Being invoked when the input field value changes.
     *
-    *   @param {Event} event The event when the input field value changes.
+    *   @param event The event when the input field value changes.
     ***************************************************************************************************************/
     TaskInput.prototype.onInputChange = function (event) {
         console.log("TaskInput.onInputChange being invoked");
@@ -61,7 +61,7 @@ var TaskInput = /** @class */ (function (_super) {
     /***************************************************************************************************************
     *   Being invoked when the form is submitted.
     *
-    *   @param {Event} event The form submission event.
+    *   @param event The form submission event.
     ***************************************************************************************************************/
     TaskInput.prototype.onFormSubmit = function (event) {
         console.log("TaskInput.onFormSubmit being invoked");

@@ -6,9 +6,6 @@
     *   The entire application component.
     *   This is an example for a stateful component.
     *
-    *   TODO correct all doc blocks!
-    *   TODO styles https://medium.com/@aghh1504/4-four-ways-to-style-react-components-ac6f323da822
-    *
     *   @author  Christopher Stock
     *   @version 1.0
     *******************************************************************************************************************/
@@ -17,7 +14,7 @@
         /***************************************************************************************************************
         *   Initializes this component by setting the initial state.
         *
-        *   @param {Object} props The initial properties being passed in the component tag.
+        *   @param props The initial properties being passed in the component tag.
         ***************************************************************************************************************/
         constructor( props:tl.AppProps )
         {
@@ -38,9 +35,9 @@
         /***************************************************************************************************************
         *   Being invoked every time this component renders.
         *
-        *   @return JSX.Element The rendered JSX.
+        *   @return The rendered JSX.
         ***************************************************************************************************************/
-        render()
+        render() : JSX.Element
         {
             console.log( "App.render() being invoked" );
 
@@ -68,9 +65,9 @@
         /***************************************************************************************************************
         *   Creates a new task in the TaskList component.
         *
-        *   @param {string} taskName The name of the task to create.
+        *   @param taskName The name of the task to create.
         ***************************************************************************************************************/
-        createTask( taskName:string )
+        createTask( taskName:string ) : void
         {
             console.log( "App.createTask( " + taskName + " ) being invoked" );
 
@@ -89,9 +86,9 @@
         /***************************************************************************************************************
         *   Deletes the task with the specified index.
         *
-        *   @param {number} taskIndex The index of the task to delete.
+        *   @param taskIndex The index of the task to delete.
         ***************************************************************************************************************/
-        deleteTask( taskIndex:number )
+        deleteTask( taskIndex:number ) : void
         {
             console.log( "App.deleteTask( " + taskIndex + " ) being invoked" );
 
@@ -110,9 +107,9 @@
         /***************************************************************************************************************
         *   Moves the task with the specified index up.
         *
-        *   @param {number} taskIndex The index of the task to move up.
+        *   @param taskIndex The index of the task to move up.
         ***************************************************************************************************************/
-        moveTaskUp( taskIndex:number )
+        moveTaskUp( taskIndex:number ) : void
         {
             console.log( "App.moveTaskUp( " + taskIndex + " ) being invoked" );
 
@@ -139,9 +136,9 @@
         /***************************************************************************************************************
         *   Moves the task with the specified index down.
         *
-        *   @param {number} taskIndex The index of the task to move down.
+        *   @param taskIndex The index of the task to move down.
         ***************************************************************************************************************/
-        moveTaskDown( taskIndex:number )
+        moveTaskDown( taskIndex:number ) : void
         {
             console.log( "App.moveTaskDown( " + taskIndex + " ) being invoked" );
 
@@ -168,7 +165,7 @@
         /***************************************************************************************************************
         *   Being invoked before this component has been mounted.
         ***************************************************************************************************************/
-        componentWillMount()
+        componentWillMount() : void
         {
             console.log( "App.componentWillMount() being invoked" );
         }
@@ -176,7 +173,7 @@
         /***************************************************************************************************************
         *   Being invoked after this component has been mounted.
         ***************************************************************************************************************/
-        componentDidMount()
+        componentDidMount() : void
         {
             console.log( "App.componentDidMount() being invoked" );
         }
@@ -188,7 +185,7 @@
         *   @param {Object} nextState   The state to set on updating.
         *   @param {Object} nextContext The context to set on updating.
         ***************************************************************************************************************/
-        componentWillUpdate( nextProps:tl.AppProps, nextState:tl.AppState, nextContext:tl.AppState )
+        componentWillUpdate( nextProps:tl.AppProps, nextState:tl.AppState, nextContext:tl.AppState ) : void
         {
             console.log( "App.componentWillUpdate() being invoked" );
         }
@@ -199,7 +196,7 @@
         *   @param {Object} nextProps   The props to set on updating.
         *   @param {Object} nextContext The context to set on updating.
         ***************************************************************************************************************/
-        componentWillReceiveProps( nextProps:tl.AppProps, nextContext:any )
+        componentWillReceiveProps( nextProps:tl.AppProps, nextContext:any ) : void
         {
             console.log( "App.componentWillReceiveProps() being invoked" );
         }
@@ -207,7 +204,7 @@
         /***************************************************************************************************************
         *   Being invoked after this component has been updated.
         ***************************************************************************************************************/
-        componentDidUpdate()
+        componentDidUpdate() : void
         {
             console.log( "App.componentDidUpdate() being invoked" );
         }
@@ -215,7 +212,7 @@
         /***************************************************************************************************************
         *   Being invoked before this component has been unmounted.
         ***************************************************************************************************************/
-        componentWillUnmount()
+        componentWillUnmount() : void
         {
             console.log( "App.componentWillUnmount() being invoked" );
         }
